@@ -1,0 +1,5 @@
+Changelog for ms2DeliveryCost.
+
+1.0.0-rc
+==============
+- First Release
