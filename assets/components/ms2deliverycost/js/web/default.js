@@ -19,6 +19,7 @@ jQuery(document).ready(function($) {
 			console.log(val);
 			if (val.trim() == '') {
 				checkRequiredResult = false;
+				return ;
 			}
 		});
 		return checkRequiredResult;
