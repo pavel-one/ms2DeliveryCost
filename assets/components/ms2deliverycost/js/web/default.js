@@ -13,14 +13,15 @@ jQuery(document).ready(function($) {
 	ms2DeliveryCost.requiredField = ms2DeliveryCost.requiredField.slice(0, -1);
 
 	ms2DeliveryCost.checkRequired = function () {
+	    var checkRequiredResult = true;
 		this.required.forEach(function(item) {
 			var val = $('[name='+item+']').val();
 			console.log(val);
-			if (!val) {
-				return false;
+			if (val.trim() == '') {
+				checkRequiredResult = false;
 			}
 		});
-		return true;
+		return checkRequiredResult;
 	}
 	ms2DeliveryCost.reload = function() {
 		this.loadEffect();
