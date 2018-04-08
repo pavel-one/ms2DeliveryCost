@@ -18,15 +18,20 @@
                     {$delivery.delivery.description}
                 </p>
             {/if}
-            {if $delivery.cost}
-                <p class="small">
-                    Стоимость доставки составит: {$delivery.cost} руб.
-                </p>
+            {if $delivery.cost !== false}
+                {*если расчет был запущен*}
+                {if $delivery.cost !== 0}
+                    <p class="small">
+                        Стоимость доставки составит: {$delivery.cost} руб.
+                    </p>
+                {else}
+                    {*если цена доставки равняется нулю*}
+                    <p class="small" style="color: red">
+                        Доставка либо не осуществляется, либо равна нулю
+                    </p>
+                {/if}
             {else}
-                {*если цена доставки не была расчитана, либо равняется нулю*}
-                <p class="small" style="color: red">
-                    Доставка либо не осуществляется, либо равна нулю
-                </p>
+                {*вывод без запуска расчетов*}
             {/if}
         </label>
     </div>

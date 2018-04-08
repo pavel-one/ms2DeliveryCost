@@ -57,7 +57,7 @@ foreach ($col as $delivery) {
     if ($_GET['deliveryGetCost'] == 'get') {
         $costDelivery = $delivery->getCost($order, $cost);
     } else {
-        $costDelivery = 0;
+        $costDelivery = false;
     }
     
     $out['costs'][] = array(
