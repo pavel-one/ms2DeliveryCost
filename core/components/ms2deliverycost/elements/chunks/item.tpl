@@ -8,7 +8,7 @@
                    data-payments="{$delivery.payments | json_encode}"
                     {$checked ? 'checked' : ''}>
             {if $delivery.delivery.logo?}
-                <img src="{$delivery.delivery.logo | phpThumbOn: 'w=40&h=40&zc=1'}" alt="{$delivery.delivery.name}" title="{$delivery.delivery.name}"/>
+                <img src="{$delivery.delivery.logo}" alt="{$delivery.delivery.name}" title="{$delivery.delivery.name}"/>
                 <span>{$delivery.delivery.name}</span>
             {else}
                 {$delivery.delivery.name}
