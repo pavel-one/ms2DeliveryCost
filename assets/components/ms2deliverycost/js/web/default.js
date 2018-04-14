@@ -27,14 +27,14 @@ jQuery(document).ready(function($) {
 	ms2DeliveryCost.reload = function() {
 		this.loadEffect();
 		var self = this;
-
-		$.get(window.location.href, {deliveryGetCost: 'get'}, function(data) {
-			var content = $(data).find(self.block).html();
-			$(self.block).html(content);
-			console.log('updated');
-			self.loadEffect(1);
-			//self.updateDelivery();
-		}, 'html');
+		setTimeout(function() {
+			$.get(window.location.href, {deliveryGetCost: 'get'}, function(data) {
+				var content = $(data).find(self.block).html();
+				$(self.block).html(content);
+				console.log('updated');
+				self.loadEffect(1);
+			}, 'html');
+		}, 2000);
 	}
 	ms2DeliveryCost.loadEffect = function(show) {
 		if (!show) {
@@ -44,12 +44,6 @@ jQuery(document).ready(function($) {
 		}
 		
 	}
-	/*
-	ms2DeliveryCost.updateDelivery = function() {
-		var deliveryId = $('[name=delivery]:checked').val();
-		$('[name=delivery][value='+deliveryId+']').change();
-	}
-	*/
 	ms2DeliveryCost.init = function() {
 		if (this.checkRequired()) {
 			this.reload();
